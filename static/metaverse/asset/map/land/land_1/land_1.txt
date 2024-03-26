@@ -1,0 +1,5 @@
+[water, ground, home, groundObject]
+[tileset_2, tileset_2, tileset_2, tileset_2]
+
+[wall]
+[tileset_2]

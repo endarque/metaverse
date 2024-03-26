@@ -1,0 +1,2 @@
+[Background(color), Grid, Background(1/6), Grid(1/6), Background(2/6), Grid(2/6), Background(3/6), Grid(3/6), Background(4/6), Grid(4/6), Background(5/6), Grid(5/6), Background(6/6), Grid(6/6)]
+[tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1, tileset_1]

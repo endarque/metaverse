@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+#korea_sido_map {
+    width: 350px;
+    min-height: 350px;
+    float: left;
+    margin: 15px 35px;
+    background:#0f1724;
+    border-radius:50%;
+}
+#states path {
+    fill: #0f1724;
+    stroke: #75e2d7;
+    stroke-width: 1.5px;
+}
+
+#states path:hover {
+    fill: #fdd058;
+}
+
+#states .active {
+    fill: #00b700;
+}
+
+#states .activeDetail {
+    fill: #00b700;
+}
+
+#states path {
+    cursor: pointer;
+}
+
+#states text {
+    cursor: pointer;
+    font-size: 12px;
+    fill: #fff;
+}

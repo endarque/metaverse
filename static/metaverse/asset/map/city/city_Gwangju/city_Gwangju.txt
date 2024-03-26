@@ -1,0 +1,2 @@
+[Gwangju, Grid_Gwangju]
+[tileset_1, tileset_1]

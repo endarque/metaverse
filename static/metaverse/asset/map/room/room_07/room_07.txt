@@ -1,0 +1,5 @@
+[background, wall, chair, whiteBoard, figures, figures2]
+[(tileset_1 tileset_2), tileset_1, tileset_2, tileset_4, (tileset_2 tileset_3 tileset_4), tileset_2]
+
+[wall]
+[tileset_1]

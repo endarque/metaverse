@@ -1,0 +1,2 @@
+[t_ground,o_picture,o_chair,o_decoration]
+[(tileset_1 tileset_2), (tileset_1 tileset_3), (tileset_1 tileset_3), tileset_1]

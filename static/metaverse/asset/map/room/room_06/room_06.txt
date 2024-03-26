@@ -1,0 +1,5 @@
+[background, chair, pictures]
+[tileset_1, tileset_2, (tileset_2 tileset_3)]
+
+[wall]
+[(tileset_1, tileset_2, tileset_3)]

@@ -1,0 +1,304 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+.main-ranking {
+	background-color: none;
+	width: 100%;
+	height: 550px;
+	max-height: 100%;
+}
+.main-ranking .rolling-list {
+    max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.main-ranking .rolling-list .coordinates {
+	position: relative;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	margin-top:10px;
+}
+.main-ranking .rolling-list .coordinates:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.main-ranking .rolling-list .coordinates .title {
+	float: left;
+	flex: 1;
+}
+.main-ranking .rolling-list .coordinates .title h1 {
+	font-size: 20px;
+	color: white;
+	font-weight: 400;
+}
+
+.main-ranking .rolling-list .coordinates .btn {
+	float: right;
+}
+.main-ranking .rolling-list .coordinates .btn .inner {
+	display: flex;
+	align-items: center;
+}
+.main-ranking .rolling-list .coordinates .btn .inner a {
+	/* background-color: #363636;
+	*/
+	padding: 6px 0;
+}
+.main-ranking .rolling-list .coordinates .btn .inner a i {
+	font-size: 35px;
+	font-weight:bold;
+}
+.main-ranking .rolling-list .coordinates .btn .inner a:first-child {
+	margin-right: 30px;
+}
+.main-ranking .rolling-list .rolling-listed-item {
+	position: relative;
+}
+.main-ranking .rolling-list .rolling-listed-item ul {
+	position: relative;
+	padding-inline-start:0;
+}
+.main-ranking .rolling-list .rolling-listed-item ul .flex-rolling {
+	display: flex;
+	width: 100%;
+	max-width: 100%;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li {
+	width: 20%;
+	max-width: 20%;
+	float: left;
+	padding-right: 16px;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .thumb {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	padding-top: 105%;
+	display: block;
+	border-radius: 3px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .thumb::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	z-index: 1;
+	background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(20%, rgba(20, 20, 20, 0)), color-stop(50%, rgba(20, 20, 20, 0.2)), to(rgba(20, 20, 20, 0.5)));
+	background: linear-gradient(transparent, rgba(20, 20, 20, 0) 20%, rgba(20, 20, 20, 0.2) 50%, rgba(20, 20, 20, 0.5));
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 1;
+	top: 0;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .thumb i {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 50px;
+	background-color: #292929;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .thumb i div {
+	font-size: 12px;
+	padding-top: 10px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding-top: 15px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .subject{
+	font-size: 20px;
+	margin-bottom:0px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .subject a {
+	color: white;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-decoration: none;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .tag {
+	color: #b6b6b6;
+	padding-top: 3px;
+	margin-bottom:2px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .like {
+	//display: flex;
+	align-items: center;
+	text-align: left;
+	//justify-content: space-between;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .like-count {
+	color: #b6b6b6;
+	font-family: Tahoma;
+	padding-left: 4px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li .posted-info .like i {
+	color: #b6b6b6;
+	margin-left: 1px;
+	font-size: 15px;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li:last-child {
+	margin-right: 0;
+}
+.main-ranking .rolling-list .rolling-listed-item ul li:hover {
+	-webkit-transform: translateY(-6px);
+	transform: translateY(-6px);
+}
+.main-ranking .sw-pageing {
+	width: 100% !important;
+	min-width: 100% !important;
+	padding-top: 10px;
+	position: relative;
+}
+
+@keyframes blink-effect { 50% { opacity: 0; } }
+.blink {
+    animation: blink-effect 1.5s step-end infinite;
+}
+.rainbow {
+    background-image: linear-gradient(90deg, white, orange, yellow, blue);
+    -webkit-background-clip: text;
+    color: transparent;font-weight: bold;
+}
+
+</style>
+    <link href="{{ url_for('static', filename='plugins/swiper/package/swiper.min.css') }}" rel="stylesheet">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12" id="container" style="padding-left:10%;padding-right:10%;background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(25, 19, 39)80%, rgb(14, 77, 80));">
+                <div class="main-ranking">
+                    <div class="rolling-list">
+                        <div class="coordinates">
+                            <div class="title " style="font-family: 'Black Han Sans', sans-serif;">
+                                <h1 style="margin-top:0.5rem;margin-bottom:0.5rem;font-size:22px;padding-top: 8.5px;color:#c75f5f;">
+                                    접속 가능한 메인 랜드 & 룸 타입
+                                </h1>
+                            </div>
+                            <div class="btn">
+                                <div class="inner">
+                                    <a href="javascript:void(0)" class="swiper-button-prev sw-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="swiper-button-next sw-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rolling-listed-item swiper-container swiper-container-initialized swiper-container-horizontal">
+                            <ul class="swiper-wrapper" style="transform: translate3d(-1936px, 0px, 0px); transition-duration: 0ms;">
+                                {% if (room_img+land_img+city_img)|length > 0 %}
+                                    {% for room in land_img + room_img + city_img %}
+                                        {% if (loop.index-1)%5==0 %}
+                                            <div class="swiper-slide" >
+                                                <div class="flex-rolling" style="overflow: hidden;">
+                                        {% endif %}
+                                                    <li style="list-style:none;">
+                                                        {% set room_name = room.split('/')[room_num|length-1].split('.') %}
+                                                        <a href="{{ url_for('demo1', name=room_name[0]) }}" class="thumb">
+                                                            <img src="{{ url_for('static', filename = room ) }}" class="lazy" alt="메인 랜드" style="display: block;">
+                                                        </a>
+                                                        <div class="posted-info" >
+                                                            {% set room_name = room.split('/')[room_num|length-1].split('.') %}
+                                                            <p class="subject">
+                                                                <a href="{{ url_for('demo1', name=room_name[0]) }}">{{ room_name[0] }} </a>
+                                                            </p>
+                                                            <div class="like">
+                                                                <p class="tag">
+                                                                    <small class="right badge badge-success">ROOM</small>
+                                                                    {% if (loop.index-1)%2==0 %}
+                                                                    <small class="right badge badge-warning rainbow" style="position:absolute;top:3px;left:-5px;">new</small>
+                                                                    {% else %}
+                                                                    <small class="right badge badge-warning" >polupar</small>
+                                                                    {% endif %}
+                                                                </p>
+                                                                <p class="tag">
+                                                                    <i class="far fa-eye"></i><span class="like-count">{{ loop.index+100 }}</span>
+                                                                    <i class="far fa-heart" style="margin-left:10px;"></i><span class="like-count">{{ loop.index+52 }}</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                        {% if (loop.index%5==0) or loop.index == room|length %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="padding-left:10%;padding-right:10%;min-height:400px;background: -webkit-linear-gradient(top, rgb(14, 77, 80) 20%, rgb(25, 19, 39)50%, rgb(0, 0, 0));">
+                <div class="col-md-12" style="padding-left:0;padding-right:0;font-family: 'Black Han Sans', sans-serif;margin-top:30px;">
+                    <h1 style="margin-bottom:0.5rem;font-size:22px;padding-top: 8.5px;color:#FFF;">
+                        커뮤니티 접속자 현황
+                    </h1>
+                </div>
+                <div class="row" style="margin-left:0;margin-right:0;font-family: 'Black Han Sans', sans-serif;">
+                    {% if room_img|length > 0 %}
+                        {% for room in room_img %}
+                        <div class="col-md-3" style="padding-left:0;height:300px;background:none;padding-right:16px;border-radius:3px;margin-bottom:20px;">
+                            <img src="{{ url_for('static', filename = room ) }}" class="lazy" alt="메인 랜드" style="display:block;max-width:100%;height:80%;">
+                            <div class="posted-info" >
+                                {% set room_name = room.split('/')[room_num|length-1].split('.') %}
+                                <p class="subject" style="margin-bottom:0;margin-top:6px;">
+                                    <a href="#" style="color:#b3b3b3;">{{ room_name[0] }} </a>
+                                </p>
+                                <p class="tag">
+                                    <i class="far fa-user"></i><span class="like-count" style="font-family: Tahoma; padding-left: 4px;color:#b3b3b3;">{{ loop.index+100 }}</span>
+                                    <small class="right badge badge-warning rainbow blink" >FULL</small>
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+var swiper = new Swiper('.rolling-listed-item', {
+    allowTouchMove: true,
+    loop: true,
+    pagination: { el: '.swiper-pagination', dynamicBullets: true, },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev',
+    },
+});
+</script>
+{% endblock %}

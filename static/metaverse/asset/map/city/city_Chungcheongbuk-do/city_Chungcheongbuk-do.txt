@@ -1,0 +1,2 @@
+[Chungcheongbuk-do, Grid_Chungcheongbuk-do]
+[tileset_1, tileset_1]

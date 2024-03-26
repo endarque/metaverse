@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+    canvas {
+        max-height:860px;
+    }
+</style>
+    <script>
+        var character = {{ character|tojson }};
+        var map = {{ map|tojson }};
+        var info_map = '{{map[0]}}';
+        var info_tile = '{{ map[1] | tojson }}';
+        var info_layer = '{{ map[2] | tojson }}';
+        var info_char = '{{ character }}';
+        var info_room = '{{ room }}';
+        var info_name = '{{ name }}';
+    </script>
+    <script src="{{ url_for('static', filename='metaverse/api/info/room_info.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='metaverse/config/room.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='metaverse/api/socket/socketRoom.js') }}"></script>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12" id="phaser-container" style="background:#141414;overflow:hidden;">
+
+            </div>
+            {% include '/chat/chat.html' %}
+        </div>
+        <!--
+        {% include '/popup/main_notice_popup.html' %}
+        -->
+    </section>
+{% endblock %}

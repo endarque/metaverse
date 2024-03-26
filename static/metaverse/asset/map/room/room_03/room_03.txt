@@ -1,0 +1,2 @@
+[FloorAndWall, chair, desk, deco, sculpture, drawings, rewards]
+[(tileset_1 tileset_5), tileset_2, (tileset_2 tileset_3 tileset_4), tileset_4, (tileset_2 tileset_3), (tileset_3 tileset_4), tileset_4]

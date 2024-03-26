@@ -1,0 +1,498 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+.url-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100000;
+
+  display: flex;
+}
+.url-popup .popup-frame {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.url-popup .popup-frame .popup-content-base {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.url-popup .popup-frame .popup-content-base .popup-content {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+}
+
+.url-popup .popup-frame .popup-content-base .popup-content a{
+    //width:85%;
+}
+
+.url-popup .popup-frame .popup-content-base .popup-content a img {
+  border-radius: 20px;
+}
+.url-popup .popup-frame .popup-content-base .popup-close button {
+  position: absolute;
+  right: -35px;
+  top: 0;
+  background:transparent;
+  border:none;
+}
+.url-popup .popup-frame .popup-content-base .popup-close button i {
+  color: white;
+  font-size: 30px;
+}
+.url-popup .popup-frame .popup-content-base .popup-close-days {
+  margin-top: 15px;
+}
+/**
+ * Switch Styles
+ */
+.switch {
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 55px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  content: "";
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 20px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/**
+    Checkbox + Radio
+*/
+.checkbox {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox::-moz-selection {
+  background: transparent;
+}
+
+.checkbox::selection {
+  background: transparent;
+}
+
+.checkbox input + span {
+  position: relative;
+  top: -2px;
+  background: #363636;
+  content: '';
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  vertical-align: middle;
+  width: 1.4em;
+  height: 1.4em;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.checkbox input + span::after {
+  content: '';
+  display: block;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.checkbox input:active + span {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox input:checked + span::after {
+  -webkit-transform: translate(-50%, -50%) scale(1) !important;
+          transform: translate(-50%, -50%) scale(1) !important;
+}
+
+.checkbox input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.checkbox {
+  color: #fff;
+}
+
+.checkbox:hover {
+  color: #fff;
+}
+
+.checkbox.is-circle input + span {
+  border-radius: 50%;
+}
+
+.checkbox.is-outlined.is-primary input:checked + span {
+  border-color: #1351f9;
+  background-color: #1351f9;
+}
+
+.checkbox.is-outlined.is-primary input + span:after {
+  color: #fff;
+  content: '\2714';
+}
+
+.checkbox input + span {
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.checkbox input + span::after {
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  content: '\f00c';
+  font-family: 'Font Awesome\ 5 Pro';
+  font-size: 0.7rem;
+  color: #1351f9;
+}
+
+.slick-track {
+    margin-left: 0px !important ;
+}
+
+</style>
+<script>
+    var myRoomName = "{{ room | safe }}";
+</script>
+<script src="{{ url_for('static', filename='js/chat/webcam_student.js') }}"></script>
+<!--slick-->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div class="url-popup" id="web_chat">
+    <div class="popup-frame">
+        <div class="popup-content-base" style="display:flex;width:100%;height:100%;">
+            <div class="popup-content" style="height:100%;">
+                <nav class="main-header navbar navbar-expand navbar-dark"
+                     style="display:flex;justify-content:center;background:none;margin-left:0;">
+                    <!-- Right navbar links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">
+                                <i class="far fa-bell"></i>
+                                <span class="badge badge-warning navbar-badge">15</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                    <span class="float-right text-muted text-sm">3 mins</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                                    <span class="float-right text-muted text-sm">12 hours</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i> 3 new reports
+                                    <span class="float-right text-muted text-sm">2 days</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="close_web_chat" href="{{ url_for('meta_art') }}" role="button">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="row" style="padding-left: 20px;">
+                    <div class="col-md-2" style="background:none;">
+                        <div style="margin: 5px 0 0 0; padding:10px 25px;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;align-content: center;
+                                    border:1px solid; border-radius:5px;color: #c6d3e7;  min-width: 250px; max-width: 250px">
+                            <video id="myCam" autoplay playsinline style="border-radius:5px;color: #c6d3e7; object-fit: cover; width: 100%; height: 100%;">
+
+                            </video>
+                            <canvas id="myCanvas" width="320px" height="320px" style="display:none"></canvas>
+                            <div style="display: flex; justify-content: space-around;flex-direction: row;align-items: center; padding: 10px 0 0 0 ">
+                                <button type="button" class="btn btn-block btn-sm btn-outline-success"
+                                        style="margin-top:0;margin-right:2px;">
+                                    <i class="fas fa-user"></i>
+                                </button>
+                                <button type="button" class="btn btn-block btn-sm btn-outline-success"
+                                        style="margin-top:0;margin-left:2px;">
+                                    <i class="fa fa-fw fa-paint-brush"></i>
+                                </button>
+                                <button type="button" class="btn btn-block btn-sm btn-outline-success"
+                                        style="margin-top:0;margin-left:2px;" id="btn_camera" name="camera_on">
+                                    <i class="fa fa-fw fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-block btn-sm btn-outline-success"
+                                        style="margin-top:0;margin-left:2px;" id="btn_mic" name="mic_on">
+                                    <i class="fa fa-fw fa-microphone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10" style="margin: 5px 0 0 0; background:none; min-height: 231px;;">
+                        <!--slick-slider-->
+                        <div class="main-content">
+                            <div class="respon" id="div_studentCam">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin:0;height: calc(100% - 295px);padding-top:0;">
+                    <div class="col-md-8" style="height:100%;">
+                        <div class="row" style="height:100%;">
+                            <div class="col-sm-12" style="padding:20px;padding-top:0;height:100%;">
+                                <div style="background: #fff;height:100%;border-radius: 5px;color: #c6d3e7;">
+                                    여기는 그림판
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1" style="height:100%;">
+                        <div class="row" style="height:100%;">
+                            <div class="col-xs-12" style="padding:20px;padding-top:0;padding-left:0;height:100%;">
+                                <div style="display: flex; flex-direction: column; justify-content: space-between; background:#24232340;height:100%;border-radius: 5px;color: #c6d3e7;">
+                                    <a class="btn btn-app bg-default">
+                                        <span class="badge bg-purple">new</span>
+                                        <i class="fas fa-paint-brush"></i> Paint
+                                    </a>
+                                    <a class="btn btn-app bg-default">
+                                        <span class="badge bg-teal">new</span>
+                                        <i class="fas fa-share-alt"></i> Share
+                                    </a>
+                                    <a class="btn btn-app bg-default">
+                                        <span class="badge bg-info">new</span>
+                                        <i class="fas fa-eraser"></i> Eraser
+                                    </a>
+                                    <a class="btn btn-app bg-default">
+                                        <span class="badge bg-danger">new</span>
+                                        <i class="fas fa-eyedropper"></i>   Drop
+                                    </a>
+                                    <a class="btn btn-app bg-info">
+                                        <span class="badge bg-teal">new</span>
+                                        <i class="fas fa-floppy-o"></i> Save Image
+                                    </a>
+                                    <a class="btn btn-app bg-info">
+                                        <span class="badge bg-info">new</span>
+                                        <i class="fas fa-file"></i> New Image
+                                    </a>
+                                    <a class="btn btn-app bg-danger">
+                                        <span class="badge bg-info">new</span>
+                                        <i class="fas fa-lock"></i> lock
+                                    </a>
+                                    <a class="btn btn-app bg-success">
+                                        <span class="badge bg-purple">new</span>
+                                        <i class="fas fa-cog"></i> Setting
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="height:100%;border-radius:5px;color: #c6d3e7;">
+                        <div class="row" style="height:35%;">
+                            <div class="col-sm-12"
+                                 style="padding:20px;padding-top:0;padding-left:0;padding-bottom:0px;height:100%;">
+                                <div style="background: #87c748;border-radius:5px;color: #c6d3e7;display: flex;justify-content: center;height:100%; border:1px solid; border-radius:5px;color: #c6d3e7;">
+                                    <img id="teacherCam"
+                                         src="static/images/avatar.jpg"
+                                         style="width: 100%; max-width:100%; height:100%; max-height:100%;border-radius:5px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="height:65%;">
+                            <div class="col-sm-12" id="chat_box" style="padding:20px;padding-left:0;height:100%;">
+                                <div class="chat_area_box">
+                                    <div id="chat_area" class="chat_area" style="padding: 4px 15px 5px"></div>
+                                </div>
+                                <div class="chat_input_area">
+                                    <input id="text" placeholder="Press Enter to chat" autocomplete="off" type="text"
+                                           class="chat_input" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+#chat_box {
+    width:100%;
+    font-size:14px;
+    height:100%;
+}
+
+#chat_box .chat_area_box {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background:#3a3a3a;
+    height:100%;
+    margin-bottom:-41px;
+    padding-bottom: 41px;
+    border-radius: 5px;
+}
+
+#chat_box .chat_area {
+    height:100%;
+    width:100%;
+    overflow:auto;
+}
+
+#chat_box .chat_input_area {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4375em;
+    //letter-spacing: 0.00938em;
+    color: #f7f251;
+    box-sizing: border-box;
+    position: relative;
+    cursor: text;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+#chat_box .chat_input_area .chat_input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    padding: 4px 15px 5px;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 32px;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    background:#14141499;
+}
+#chat_box .chat_input:focus{
+    outline:0;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-corner {
+    background: rgba(51,51,51,.2);
+}
+
+*::-webkit-scrollbar-thumb {
+    transition: background .1s;
+    background: rgba(238,238,238,.8);
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(51,51,51);
+    border-radius: 3px;
+}
+.chat_contents {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 2px;
+}
+.chat_contents p {
+    margin: 3px;
+    text-shadow: black 0.3px 0.3px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    color: rgb(218, 165, 32);
+}
+.chat_contents span {
+    padding-left:3px;
+    color: white;
+    font-weight: normal;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,265 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/hexagonal-mini.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 131.66666666666666,
+                "y": 127.49999999999999
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/hexagonal-mini.tmx#hex mini": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/isometric_grass_and_water.tmx": {
+            "scale": 0.6709375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 800.3726129483,
+                "y": 400.18630647415006
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/isometric_grass_and_water.tmx#isometric_grass_and_water": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/isometric_staggered_grass_and_water.tmx": {
+            "scale": 0.5161057692307691,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1040.48439683279,
+                "y": 520.242198416395
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/isometric_staggered_grass_and_water.tmx#isometric_grass_and_water": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/main.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 500.6666666666666,
+                "y": 544.6666666666667
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/perspective_walls.tmx": {
+            "scale": 0.8762600806451613,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.2867414437734,
+                "y": 496.99856197871736
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/perspective_walls.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_001.tmx": {
+            "scale": 6.3898809523809526,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 84.03912435957149,
+                "y": 36.072659524918485
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_001.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_001.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_002.tmx": {
+            "scale": 5.591145833333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 96.044713553796,
+                "y": 60.0055891942245
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_002.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_002.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_003.tmx": {
+            "scale": 5.591145833333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 96.044713553796,
+                "y": 72.16767582673498
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_003.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_003.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_004.tmx": {
+            "scale": 6.036458333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 84.15530629853323,
+                "y": 72.14495254529768
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_004.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_004.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_005.tmx": {
+            "scale": 3.440705128205128,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 156.07265952491846,
+                "y": 72.22356776897996
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_005.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_005.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_006.tmx": {
+            "scale": 6.3898809523809526,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 84.03912435957149,
+                "y": 60.01676758267349
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_006.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_006.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_007.tmx": {
+            "scale": 5.174107142857142,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 84.07247627264884,
+                "y": 84.1691113028473
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_007.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_007.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_008.tmx": {
+            "scale": 9.0546875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 48.041415012942196,
+                "y": 48.096635030198456
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_008.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_008.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_009.tmx": {
+            "scale": 11.182291666666666,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 48.022356776898,
+                "y": 36.08383791336749
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_009.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_009.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/sewers.tmx": {
+            "scale": 1.1683467741935483,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 372.320966350302,
+                "y": 372.74892148403796
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/sewers.tmx#rules_sewers": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/sewers.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewers.tmx": {
+            "scale": 0.7243749999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 600.5176876617776,
+                "y": 236.75582398619497
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewers.tmx#sewer_tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/test_hexagonal_tile_60x60x30.tmx": {
+            "scale": 0.7067073170731707,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 404.69370146678176,
+                "y": 614.8231233822261
+            }
+        },
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/test_hexagonal_tile_60x60x30.tmx#test_hexagonal_tile_60x60x30": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "main.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 472,
+                "y": 593
+            }
+        },
+        "main_land.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "E:/MAAP_MAP",
+    "last.imagePath": "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples",
+    "map.height": 32,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 32,
+    "openFiles": [
+    ],
+    "project": "MAAP.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "main.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/isometric_grass_and_water.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/sewers.tmx",
+        "main_land.tsx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/hexagonal-mini.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_008.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_006.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_007.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_005.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_004.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_003.tmx",
+        "C:/Users/jshan/Desktop/개인/서교수님_프로젝트/메타버스플랫폼/개발 자료/tiled-master/examples/sewer_automap/rule_002.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 1,
+    "tileset.spacing": 1
+}

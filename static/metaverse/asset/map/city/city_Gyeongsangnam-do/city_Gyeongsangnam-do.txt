@@ -1,0 +1,2 @@
+[Gyeongsangnam-do, Grid_Gyeongsangnam-do]
+[tileset_1, tileset_1]

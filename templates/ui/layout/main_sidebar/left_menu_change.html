@@ -1,0 +1,107 @@
+<!-- Sidebar Menu -->
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+        <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-home"></i>
+                <p>
+                    HOME
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('meta_land') }}" class="nav-link active">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>INTRO</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('dashboard') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>DASHBOARD</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-header" style="font-family:'Tilt Warp', cursive;margin-top:10px;">
+            <span class="text" style="color:#f0f19f;font-size: 16px;">MULTIVERSE</span>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-globe"></i>
+                <p>
+                    Metaverse
+                    <i class="right fas fa-angle-left"></i>
+                    <span class="badge badge-info right">2</span>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('meta_land') }}" class="nav-link">
+                        <i class="fas fa-map-pin nav-icon"></i>
+                        <p>Meta-Land <small class="right badge badge-warning" ><span style="animation: blink-effect 1.5s step-end infinite;margin-left:0;">new</span></small></p>
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('meta_art') }}" class="nav-link">
+                        <i class="fas fa-palette nav-icon"></i>
+                        <p>Meta-Art <small class="right badge badge-warning"><span style="animation: blink-effect 1.5s step-end infinite;margin-left:0;">new</span></small></p>
+
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!--
+        <li class="nav-header" style="font-family:'Tilt Warp', cursive;margin-top:10px;">
+            <span class="text" style="color:#f0f19f;font-size: 16px;">MARKET PLACE</span>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-shopping-cart"></i>
+                <p>
+                    MARKET
+                    <i class="right fas fa-angle-left"></i>
+                    <span class="badge badge-info right">3</span>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('demo1') }}" class="nav-link">
+                        <i class="fas fa-border-none nav-icon"></i>
+                        <p>NFT</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('demo2') }}" class="nav-link">
+                        <i class="fas fa-award nav-icon"></i>
+                        <p>ITEM</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('demo2') }}" class="nav-link">
+                        <i class="fa fa-book nav-icon"></i>
+                        <p>E-Book</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-header" style="font-family:'Tilt Warp', cursive;margin-top:10px;">
+            <span class="text" style="color:#f0f19f;font-size: 16px;">SUPPORT</span>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url_for('QNA') }}" class="nav-link">
+                <i class="nav-icon far fa-comments"></i>
+                <p>
+                    DOWNLOAD
+                    <span class="right badge badge-danger">Test</span>
+                </p>
+            </a>
+        </li>
+        -->
+    </ul>
+</nav>

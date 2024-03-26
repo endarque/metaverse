@@ -1,0 +1,317 @@
+<style>
+.land-details {
+    position: fixed;
+    top:57px;
+    right: 0;
+    left: unset;
+    z-index: 1000;
+    width: 340px;
+    height: calc(100% - 87px);
+    //height:86%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 50%);
+    background-color: #141414bd;
+    border: 1px solid #383e46;
+    border-radius: 8px;
+}
+
+.land-details p {
+    margin:0;
+}
+
+.land-details .label {
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Montserrat Regular","Verdana",sans-serif;
+    color: #fff;
+    text-align: left;
+    opacity: .7;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.land-details .close {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: unset;
+    left: unset;
+    z-index: 3;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0 6px 0 6px;
+    width: 31px;
+    height: 31px;
+}
+
+.land-details .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    grid-gap: 24px;
+    gap: 24px;
+    height: 100%;
+    padding: 20px 20px 100px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.land-details .resume {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    grid-gap: 12px;
+    gap: 12px;
+}
+.land-resume {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    grid-gap: 12px;
+    gap: 12px;
+}
+
+.land-resume .resume {
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 10px;
+    gap: 10px;
+}
+
+.land-resume, .land-resume .resume {
+    display: flex;
+    align-items: flex-start;
+}
+
+.land-resume .resume .land-title {
+    font-weight:bold;
+    font-size: 18px;
+    line-height: 19px;
+    font-family: "Montserrat SemiBold","Verdana",sans-serif;
+    color: #e3b17e;
+    text-align: left;
+    opacity: .9;
+    margin:0;
+}
+.land-resume .resume .land-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.land-resume .resume .coordinates {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    grid-gap: 8px;
+    gap: 8px;
+}
+.land-resume .cta, .land-resume .cta .btn-square {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 8px;
+    gap: 8px;
+    justify-content: flex-start;
+}
+.land-resume .resume .coordinates .map-pin {
+    height: 14px;
+    width: auto;
+}
+.land-details .close img{
+    height: 20px;
+}
+.is-flex, .is-flex-horizontal, .is-flex-horizontal-reverse, .is-flex-vertical, .is-flex-vertical-reverse, .is-flex-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.is-flex-horizontal {
+    flex-direction: row;
+}
+.is-align-center {
+    align-items: center;
+}
+
+.owner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.owner-wrapper .owner-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.owner-wrapper .owner-info .owner-socials .socials-buttons{
+    grid-gap: 2px;
+    gap: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.mt-2 {
+    margin-top: 10px!important;
+}
+.technical-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-gap: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+.land-details .footer, .footer .two-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: unset;
+    right: unset;
+    bottom: 0;
+    left: unset;
+    z-index: 100;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-top: 1px solid transparent;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    height: 164px;
+    max-height: 164px;
+    flex-wrap:wrap;
+}
+.land-details .footer button{
+    min-height: 39px;
+    max-height: 39px;
+    border-radius: 20px;
+    font-size:14px;
+    font-weight:bold;
+    color:#fff;
+}
+.land-details .footer button.outlined {
+    background: rgba(0,0,0,.2)!important;
+    border: 2px solid #bdc0c2;
+}
+.land-details .nick {
+    background: transparent;
+    padding: 10px;
+    padding-left: 20px;
+    height: 39px;
+    font-size: 14px;
+    border-radius: 39px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px -3px 3px white;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color:#f4f720;
+}
+
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#close_details').click(function() {
+        $('#land-details').hide();
+    });
+});
+</script>
+
+<div class="land-details" id="land-details">
+    <div class="close" >
+        <img id="close_details" src="{{ url_for('static', filename='images/meta/icon/close-icon.svg') }}">
+    </div>
+
+    <div class="wrapper" style="">
+        <div class="body">
+            <div>
+                <div class="land-resume">
+                    <div class="resume">
+                        <h4 class="land-title">
+                            <span>Korea University</span>
+                        </h4>
+                        <div class="is-flex-horizontal is-align-center"><!---->
+                            <div class="coordinates is-flex-horizontal is-align-center">
+                                <img src="{{ url_for('static', filename='images/meta/icon/map-pin.png') }}" alt="point" class="map-pin">
+                                <p style="margin:0;" id="map_point_detail">-11, -54</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="land-description">
+                    <p id="land-desc" class="desc less">
+                    Part street party, part concert venue, it's a space of sharing. This very special Web3 neighborhood evokes the key locations of Marathon City and traces the arc of Nipsey’s rise to success.
+                    </p>
+                    <p class="show-desc">
+                        Show More
+                    </p>
+                    <img class="img-responsive" src="{{ url_for('static', filename ='metaverse/asset/map/room/room_05/room_05.png' ) }}" style="width:100%;">
+                </div> <!---->
+            </div> <!---->
+            <div class="owner-wrapper">
+                <div class="owner-info">
+                    <div>
+                        <p class="label">OWNER</p>
+                        <span class="user-tag is-cursor fromMap">@MAAP</span>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p class="label">VISTORS</p>
+                    <i class="fas fa-user"></i><span style="padding-left: 4px;">15</span>
+                </div>
+            </div>
+            <div class="technical-info">
+                <div>
+                    <p class="label">size</p>
+                    <p class="land-info">100 x 100</p>
+                </div> <!---->
+                <div>
+                    <p class="label">Type</p>
+                    <p class="land-info">ROOM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="two-btn"><!---->
+                <form action= "{{ url_for('demo2') }}" method = "POST" style="min-width:100%;">
+                    <div class="technical-info" >
+                        <div style="width:100%;">
+                            <p class="label">NICK NAME</p>
+                            <input class="nick" id="nickname" name="nickname" type="text" placeholder="Input your nick name">
+                        </div> <!---->
+                    </div>
+
+                    <input type="hidden" name="name" value="한정수" />
+                    <input type="hidden" name="room" value="{{ room }}" />
+                    <button color="primary" type="submit" class="outlined small" outlined="" small=""  outlined-color="#0084ff" style="border-color: rgb(0, 132, 255); min-width: 100%;">
+                        입장하기
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

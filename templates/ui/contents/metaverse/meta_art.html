@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- d3.js & korea.js - 지도 표현을 위한 라이브러리 -->
+    <script src="{{ url_for('static', filename='plugins/d3/d3.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/drawKoreaMap/korea.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/metaverse/meta_art.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/korea.css') }}" rel="stylesheet">
+    <section class="content ">
+
+        <div class="row" style="display:flex;flex-direction:row; justify-content: center;padding-top:20px;">
+            <div class="" style="display:inline;">
+                <div class="visitor-title-quotes rainbow" style="letter-spacing : 0.3em;">METAVERSE</div>
+                <div class="visitor-title-deco">
+                    <div>Art Center</div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:70px;margin-bottom:70px;">
+            <div class="col-sm"></div>
+            <div class="col-sm"  style="display:flex;flex-direction:column;justify-content: center;">
+                <div id="korea_map"></div>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <div class="cbp-item " data-mp4="" style="perspective: 1000px; transform-style: preserve-3d; width: 320px;">
+                    <div class="cbp-item-wrapper" style="perspective: 1000px; transform-style: preserve-3d; transform: rotateX(0deg) rotateY(0deg);">
+                        <div class="city_name" style="position: absolute;opacity:1;top:0;width:100%;display: flex;justify-content: center;">
+                            <div class="sido-title-deco" style="font-size:20px;">
+                                <div id="area_name">Seoul</div>
+                            </div>
+                        </div>
+                        <img id="city_img" src="{{ url_for('static', filename ='metaverse/asset/map/city/city_Seoul/city_Seoul.png' ) }}"  style="display:block;max-width:100%;width:350px;">
+                        <div class="img-art-detail">
+                            <p style="margin-bottom:0;margin-top:6px;">
+                                <a href="#" style="color:#b3b3b3;">info</a>
+                            </p>
+                            <p class="tag">
+                                <i class="far fa-user"></i><span id='user_num' class="like-count" style="font-family: Tahoma; padding-left: 4px;color:#b3b3b3;"></span>
+                                <small class="right badge badge-warning rainbow blink" >FULL</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+
+        </div>
+        <div name="gallery_pano" class="row" style="background:#fff;">
+            <div class="col-sm-12" id="vr_pano">
+
+            </div>
+        </div>
+        <div class="row" style="display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: 0px;margin-left: 0px;justify-content: space-evenly;">
+            <div class="col-sm"></div>
+            <div class="col-sm" >
+                <div class="testimonial-wrapp">
+                    <div class="testimonial-photo">
+                        <div class="photo" style="background-image:url(static/images/meta/MapBackground.jpg)"></div>
+                    </div>
+                    <a href="{{ url_for('draw_webChatStudent') }}" style="color:#fff;">
+                        <div id="webcam" class="testimonial-text">
+                            <h4 class="darkcolor author-name">STUDENT</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <div class="testimonial-wrapp">
+                    <div class="testimonial-photo">
+                        <div class="photo" style="background-image:url(static/images/meta/MapBackground.jpg)"></div>
+                    </div>
+                    <div class="testimonial-text">
+                        <h4 class="darkcolor author-name">TEACHER</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </section>
+<script>
+$(document).ready(function(){
+    $(".cbp-item").hover3d({
+        selector: ".cbp-item-wrapper"
+    });
+});
+</script>
+
+{% endblock %}

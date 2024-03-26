@@ -1,0 +1,2 @@
+[Jeollabuk-do, Grid_Jeollabuk-do]
+[tileset_1, tileset_1]

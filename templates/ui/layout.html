@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metaverse</title>
+    <link rel="icon" href="static/images/logo/main_logo.png">
+    {% include '/layout/reference.html' %}
+</head>
+<body class="dark-mode hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    {% include '/layout/preloader_Navbar.html' %}
+    {% include '/layout/main_sidebar.html' %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="background:#000;">
+        <!-- Main content -->
+        {% block content %}
+        {% endblock %}
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!--
+    {% include '/layout/footer.html' %}
+    -->
+    {% include '/layout/right_menu.html' %}
+</div>
+</body>
+</html>

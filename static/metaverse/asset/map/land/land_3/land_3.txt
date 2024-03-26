@@ -1,0 +1,2 @@
+[ground, ground2, water, fence, flower, home, groundObject]
+[tileset_5, tileset_1, tileset_5, (tileset_1 tileset_4), (tileset_1 tileset_2 tilset_3), tileset_1, (tileset_1 tileset_2 tileset_5)]

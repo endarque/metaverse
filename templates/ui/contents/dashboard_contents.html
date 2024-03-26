@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+    canvas {
+        max-height:860px;
+    }
+</style>
+    <script>
+        var map = {{ map|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/show_map.js') }}"></script>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12" id="SHOW_LAND" style="background:#141414;overflow:hidden;">
+            </div>
+        </div>
+        <!--
+        {% include '/popup/main_notice_popup.html' %}
+        -->
+    </section>
+{% endblock %}

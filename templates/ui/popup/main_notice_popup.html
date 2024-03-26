@@ -1,0 +1,246 @@
+<style>
+.url-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100000;
+  height: 100vh;
+  display: flex;
+}
+.url-popup .popup-frame {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.url-popup .popup-frame .popup-content-base {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.url-popup .popup-frame .popup-content-base .popup-content {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 4px 3px 40px 10px rgba(0, 0, 0, 0.56);
+}
+.url-popup .popup-frame .popup-content-base .popup-content a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.url-popup .popup-frame .popup-content-base .popup-content a img {
+  border-radius: 20px;
+}
+.url-popup .popup-frame .popup-content-base .popup-close button {
+  position: absolute;
+  right: -35px;
+  top: 0;
+  background:transparent;
+  border:none;
+}
+.url-popup .popup-frame .popup-content-base .popup-close button i {
+  color: white;
+  font-size: 30px;
+}
+.url-popup .popup-frame .popup-content-base .popup-close-days {
+  margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Switch Styles
+ */
+.switch {
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 55px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  content: "";
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 20px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/**
+    Checkbox + Radio
+*/
+.checkbox {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox::-moz-selection {
+  background: transparent;
+}
+
+.checkbox::selection {
+  background: transparent;
+}
+
+.checkbox input + span {
+  position: relative;
+  top: -2px;
+  background: #363636;
+  content: '';
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  vertical-align: middle;
+  width: 1.4em;
+  height: 1.4em;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.checkbox input + span::after {
+  content: '';
+  display: block;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.checkbox input:active + span {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox input:checked + span::after {
+  -webkit-transform: translate(-50%, -50%) scale(1) !important;
+          transform: translate(-50%, -50%) scale(1) !important;
+}
+
+.checkbox input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.checkbox {
+  color: #fff;
+}
+
+.checkbox:hover {
+  color: #fff;
+}
+
+.checkbox.is-circle input + span {
+  border-radius: 50%;
+}
+
+.checkbox.is-outlined.is-primary input:checked + span {
+  border-color: #1351f9;
+  background-color: #1351f9;
+}
+
+.checkbox.is-outlined.is-primary input + span:after {
+  color: #fff;
+  content: '\2714';
+}
+
+.checkbox input + span {
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.checkbox input + span::after {
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  content: '\f00c';
+  font-family: 'Font Awesome\ 5 Pro';
+  font-size: 0.7rem;
+  color: #1351f9;
+}
+
+
+</style>
+<div class="url-popup">
+    <div class="popup-frame">
+        <div class="popup-content-base" style="display:flex;">
+            <div class="popup-content">
+                <a href="#" target="_blank">
+                    <img src="{{ url_for('static', filename='/images/sky.png')}}">
+                </a>
+            </div>
+            <div class="popup-close">
+                <button type="button" id="popup_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="popup-close-days">
+                <label class="checkbox is-outlined is-primary">
+                    <input type="checkbox" id="week_btn">
+                    <span></span> 일주일 동안 보지 않기
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
