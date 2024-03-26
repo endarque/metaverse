@@ -6,8 +6,8 @@ from oauthlib.oauth2 import WebApplicationClient
 
 KAKAO_AUTH_SERVER = "https://kauth.kakao.com%s"
 KAKAO_API_SERVER = "https://kapi.kakao.com%s"
-KAKAO_RESTAPI_KEY = "1e03b9449a21e4ef67fe0594dea2574f"
-KAKAO_SECTERT_KEY = "DClCfmRiHvmISDFYt0y4Tb5HUl0R7QKI"
+KAKAO_RESTAPI_KEY = ""
+KAKAO_SECTERT_KEY = ""
 
 class loginKakao(login):
 

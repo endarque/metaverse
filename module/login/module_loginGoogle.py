@@ -5,9 +5,9 @@ from oauthlib.oauth2 import WebApplicationClient
 from module.login.module_login import login
 from module.login.module_user import User, UserType
 
-GOOGLE_CLIENT_ID = "300941907475-fvqoq9em70o7nihiqfm6p00avoecsl43.apps.googleusercontent.com"
-GOOGLE_CLIENT_PW = "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"
-GOOGLE_DISCOVERY_URL = "https://accounts.google.com/.well-known/openid-configuration"
+GOOGLE_CLIENT_ID = ""
+GOOGLE_CLIENT_PW = ""
+GOOGLE_DISCOVERY_URL = ""
 
 class loginGoogle(login):
 
